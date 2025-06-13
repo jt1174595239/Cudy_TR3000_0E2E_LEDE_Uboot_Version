@@ -11,10 +11,30 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-
-# Modify default theme
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/192.168.1.1/192.168.199.1/g' package/base-files/luci2/bin/config_generate
 
 # Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+sed -i 's/LEDE/TR3000/g' package/base-files/luci2/bin/config_generate
+
+# Modify timezone
+sed -i 's/UTC/CST-8/g' package/base-files/luci2/bin/config_generate
+
+# Modify default WiFi region
+sed -i 's/US/AU/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
+# Enable Wifi6 mode
+sed -i 's/VHT80/HE160/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
+# Delete default WiFi ssid & encryption
+sed -i '/ssid=LEDE/{N;N;d}' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
+# Customize Wifi settings
+sed -i '/network=lan/a\
+set wireless.@wifi-device[0].channel=1\
+set wireless.@wifi-iface[0].ssid=Cudy-0E2E\
+set wireless.@wifi-iface[0].encryption=psk2+aes\
+set wireless.@wifi-iface[0].key=New@2018\
+set wireless.@wifi-device[1].channel=40\
+set wireless.@wifi-iface[1].ssid=Cudy-0E2E-5G\
+set wireless.@wifi-iface[1].encryption=psk2+aes\
+set wireless.@wifi-iface[1].key=New@2018' package/kernel/mac80211/files/lib/wifi/mac80211.sh
