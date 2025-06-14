@@ -22,9 +22,6 @@ sed -i 's/UTC/CST-8/g' package/base-files/luci2/bin/config_generate
 # Modify default WiFi region
 sed -i 's/US/AU/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-# Enable Wifi6 mode
-sed -i 's/VHT80/HE160/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-
 # Delete default WiFi ssid & encryption
 sed -i '/ssid=LEDE/{N;N;d}' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
