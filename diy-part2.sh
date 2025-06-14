@@ -29,12 +29,12 @@ sed -i 's/VHT80/HE160/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '/ssid=LEDE/{N;N;d}' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # Customize Wifi settings
-sed -i '/network=lan/a\
-    set wireless.@wifi-device[0].mode=ap\
-    set wireless.@wifi-iface[0].ssid=Cudy-0E2E\
-    set wireless.@wifi-iface[0].encryption=psk2+aes\
-    set wireless.@wifi-iface[0].key=New@2018\
-    set wireless.@wifi-device[1].channel=40\
-    set wireless.@wifi-iface[1].ssid=Cudy-0E2E-5G\
-    set wireless.@wifi-iface[1].encryption=psk2+aes\
-    set wireless.@wifi-iface[1].key=New@2018' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/mode=ap/a\
+      set wireless.@wifi-iface[0].ssid=Cudy-0E2E\
+      set wireless.@wifi-device[0].channel=6\
+      set wireless.@wifi-iface[0].encryption=psk2+aes\
+      set wireless.@wifi-iface[0].key=New@2018\
+      set wireless.@wifi-iface[1].ssid=Cudy-0E2E-5G\
+      set wireless.@wifi-device[1].channel=40\
+      set wireless.@wifi-iface[1].encryption=psk2+aes\
+      set wireless.@wifi-iface[1].key=New@2018' package/kernel/mac80211/files/lib/wifi/mac80211.sh
