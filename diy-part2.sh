@@ -11,13 +11,13 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.199.1/g' package/base-files/luci2/bin/config_generate
+sed -i 's/192.168.1.1/192.168.199.1/g' package/base-files/luci/bin/config_generate
 
 # Modify hostname
-sed -i 's/LEDE/TR3000/g' package/base-files/luci2/bin/config_generate
+sed -i 's/LEDE/TR3000/g' package/base-files/luci/bin/config_generate
 
 # Modify timezone
-sed -i 's/UTC/CST-8/g' package/base-files/luci2/bin/config_generate
+sed -i 's/UTC/CST-8/g' package/base-files/luci/bin/config_generate
 
 # Modify default WiFi region
 sed -i 's/US/AU/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
