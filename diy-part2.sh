@@ -23,7 +23,7 @@ sed -i 's/UTC/CST-8/g' package/base-files/luci/bin/config_generate
 sed -i 's/US/AU/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # Modify default WiFi name
-sed -i 's/LEDE/Cudy-0E2E/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/LEDE/Cudy-1E82/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # Set WiFi6 160Mhz Default
 # sed -i 's/VHT80/HE160/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
